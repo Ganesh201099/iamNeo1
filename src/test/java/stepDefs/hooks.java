@@ -1,24 +1,33 @@
 package stepDefs;
 
-import io.cucumber.java.AfterAll;
-import io.cucumber.java.Before;
-import io.cucumber.java.BeforeAll;
-import io.cucumber.java.Scenario;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import io.cucumber.java.*;
 import pageObjects.basePage;
+import utility.Report;
 
 import java.io.IOException;
 
 public class hooks extends basePage {
     Scenario scenario;
+    static ExtentReports report;
+    public static ExtentTest test;
 
     @Before
-    public void browserLaunch(Scenario scenario) throws IOException {
+    public void setScenario(Scenario scenario) {
         this.scenario = scenario;
+    }
+
+    @BeforeAll
+    public static void browserLaunch() throws IOException {
         initateBrowser();
+        report = Report.generateExtentReport("Iam Neo Report");
+        Report.attachScreenshotToReport("Screenshot", test, "Execution Screenshot");
     }
 
     @AfterAll
     public static void tearDown() throws Exception {
+        //Report.attachScreenshotToReport("Screenshot", test, "Execution Screenshot");
         driver.quit();
     }
 }
