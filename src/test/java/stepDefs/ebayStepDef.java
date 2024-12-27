@@ -7,7 +7,6 @@ import io.cucumber.java.en.When;
 import org.testng.Assert;
 import pageObjects.homePage;
 import utility.Log;
-import pageObjects.basePage;
 
 public class ebayStepDef extends homePage {
     @Given("Launch the application")
@@ -84,5 +83,10 @@ public class ebayStepDef extends homePage {
     @And("Switch to New tab")
     public void switchToNewTab() {
         switchToNewWindow();
+    }
+
+    @And("Navigate to profile screen")
+    public void navigateToProfileScreen() {
+        homePage.title.click();
     }
 }

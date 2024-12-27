@@ -9,6 +9,8 @@ Feature: BDD FRAMEWORK QUESTION CREATION
     Then Validate that Smart home category screen is displayed
     And Validate the number of results available
 
+    And Navigate to profile screen
+
     @test
   Scenario Outline: Hovering, entering values in a input box and Button clicks
     Given Navigate to home page
@@ -24,6 +26,7 @@ Feature: BDD FRAMEWORK QUESTION CREATION
       | Samsung |
       | Apple   |
       | Redmi   |
+
 
   Scenario Outline: Hovering, Tab switching and button clicks
     Given Navigate to home page

@@ -1,7 +1,6 @@
 package pageObjects;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
